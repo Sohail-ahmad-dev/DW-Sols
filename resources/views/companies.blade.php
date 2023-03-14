@@ -76,7 +76,7 @@
   <script src="{{ asset('assets/datatable/js/twitter-bootstrap.min.js') }}"></script>
 
   <!-- DataTables JS -->
-  <script src="{{ asset('assets/datatable/js/jquery.dataTables.min') }}"></script>
+  <script src="{{ asset('assets/datatable/js/jquery.dataTables.min.js') }}"></script>
 
   <!-- DataTables Bootstrap 4 JS -->
   <script src="{{ asset('assets/datatable/js/dataTables.bootstrap4.min.js') }}"></script>
