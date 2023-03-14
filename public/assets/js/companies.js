@@ -9,7 +9,7 @@ $(function () {
       serverSide: true,
       responsive: true,
       ajax: {
-        url: "{{ route('compaines') }}",
+        url: base_url+"companies",
         data: function (d) {
           d.status = status
           d.cro = cro
