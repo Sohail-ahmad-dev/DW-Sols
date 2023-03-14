@@ -12,7 +12,6 @@
 
     <!-- DateRangePicker CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/daterangepicker/daterangepicker.css') }}" />
-    
 
   <div class="container">
     <div class="row justify-content-center">
