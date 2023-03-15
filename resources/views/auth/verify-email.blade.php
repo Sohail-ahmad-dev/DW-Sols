@@ -1,4 +1,4 @@
-@if(!empty(Auth::user()->email_verified_at))
+@if(empty(Auth::user()->email_verified_at))
   
   
     @section('content')
