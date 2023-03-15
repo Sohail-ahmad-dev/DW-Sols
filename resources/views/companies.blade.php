@@ -13,6 +13,23 @@
     <!-- DateRangePicker CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/daterangepicker/daterangepicker.css') }}" />
 
+    <style>
+      #companies_filter label {
+        text-align: left;
+      }
+      #companies_filter {
+        text-align: right;
+      }
+      .pagination {
+        justify-content: end;
+      }
+      @media(){
+        #companies_filter label, #companies_length, label{
+          width: 100%;
+        }
+      }
+    </style>
+
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 shadow py-5 px-4">

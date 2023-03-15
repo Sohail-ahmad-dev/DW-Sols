@@ -13,6 +13,9 @@ class CompaniesController extends Controller
 
         if ($request->ajax()) {
             $companie = [];
+            $date_range = "";
+            $from = "";
+            $end = "";
 
             $companie = Companie::all();
             
@@ -39,6 +42,36 @@ class CompaniesController extends Controller
                 $companie = Companie::whereBetween('reg_date',[$from,$end])->get();
                 
             }
+            
+            if (!empty($request->get('status')) && !empty($request->get('cro'))) {
+                $companie = Companie::
+                    where('status',$request->get('status'))
+                    ->where('cro',$request->get('cro'))
+                    ->get();
+            }
+            
+            if (!empty($request->get('status')) && !empty($request->get('date_range'))) {
+                $companie = Companie::
+                    where('status',$request->get('status'))
+                    ->whereBetween('reg_date',[$from,$end])
+                    ->get();
+            }
+            
+            if (!empty($request->get('cro')) && !empty($request->get('date_range'))) {
+                $companie = Companie::
+                    where('cro',$request->get('cro'))
+                    ->whereBetween('reg_date',[$from,$end])
+                    ->get();
+            }
+            
+            if (!empty($request->get('cro')) && !empty($request->get('date_range')) && !empty($request->get('status'))) {
+                $companie = Companie::
+                    where('cro',$request->get('cro'))
+                    ->where('status',$request->get('status'))
+                    ->whereBetween('reg_date',[$from,$end])
+                    ->get();
+            }
+            // dd($companie->toArray(),"hhh");
             
             
             return Datatables::of($companie)
